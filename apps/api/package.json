@@ -1,0 +1,32 @@
+{
+  "name": "@airfieldtemp/api",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./contract.ts"
+    }
+  },
+  "scripts": {
+    "dev": "bun run db:generate && bun --env-file=../../.env database/migrate.ts && bun --watch --env-file=../../.env app.ts",
+    "start": "bun database/migrate.ts && bun app.ts",
+    "build": "bun run db:generate && bun build app.ts --target bun --outdir dist && bun build database/migrate.ts --target bun --outfile dist/migrate.js",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "rm -rf drizzle && drizzle-kit generate"
+  },
+  "dependencies": {
+    "@hono/bun": "1.0.1",
+    "@starfall-kit/auth": "^0.4.0",
+    "@starfall-kit/email": "^0.2.0",
+    "@starfall-kit/hono": "^0.3.0",
+    "drizzle-orm": "1.0.0-rc.5",
+    "hono": "4.13.14",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.12",
+    "@types/bun": "1.4.4",
+    "drizzle-kit": "1.0.0-rc.5"
+  }
+}

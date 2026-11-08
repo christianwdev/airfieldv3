@@ -1,0 +1,10 @@
+{
+  "extends": "@starfall-kit/config/tsconfig/bun.json",
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./*"]
+    }
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist", "drizzle"]
+}

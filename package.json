@@ -1,0 +1,33 @@
+{
+  "name": "airfieldtemp",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter '@airfieldtemp/*' dev",
+    "build": "bun run --filter '@airfieldtemp/*' build",
+    "test": "bun run --filter '@airfieldtemp/*' test",
+    "typecheck": "tsc --noEmit -p tsconfig.json && bun run --filter '@airfieldtemp/*' typecheck",
+    "lint": "oxlint --type-aware",
+    "lint:fix": "oxlint --type-aware --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "knip": "knip",
+    "check": "bun run lint && bun run format:check && bun run typecheck && bun run knip && bun run test && bun run build"
+  },
+  "devDependencies": {
+    "@starfall-kit/config": "^0.3.0",
+    "@types/bun": "1.4.4",
+    "knip": "6.43.0",
+    "oxfmt": "0.75.0",
+    "oxlint": "1.90.0",
+    "oxlint-tsgolint": "7.0.2005",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "@paralleldrive/cuid2": "^3.3.0"
+  }
+}

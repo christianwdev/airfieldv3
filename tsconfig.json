@@ -1,0 +1,4 @@
+{
+  "extends": "@starfall-kit/config/tsconfig/bun.json",
+  "include": ["oxlint.config.ts", "oxfmt.config.ts"]
+}

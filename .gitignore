@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.claude/settings.local.json
+.claude/worktrees/
+.next/
+next-env.d.ts
+/apps/api/drizzle/
